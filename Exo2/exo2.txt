@@ -1,0 +1,9 @@
+1-Selectionner les commandes avec des produits des fournisseurs allemands
+2-Selectionner le nom des clients  qui ont des commandes supérieur à 50 000 (plusieurs lignes pour une commandes dans details_commandes. Prix * quantite)
+3-Selectionner le nom des employés qui ont fait une commande pour un clients Francais en 2017
+4-Lister les produits du plus vendu au moins vendu 
+5-Selectionner le client qui a fait le plus de commande
+6-Afficher les employés et leur salaire. Ajouter 1000 au employés qui on effectuer + de 10 commandes et 500 a ceux qui ont fait plus de 5 commandes en 2017
+7-Afficher le meilleur employé en 2017 (chiffre d'affaire --> prix * quantité)
+8-Le fournisseur qui a le plus de produits 'boissons'
+

@@ -1,0 +1,19 @@
+Afficher les commandes d'avant le 01/08/2017 qui ont une somme sup à 11000 et qui contiennent des produits des fournisseurs français.(32 lignes)
+
+Afficher la liste des fournisseurs qui nous fournissent plus de 4 produits différents. (2 lignes)
+
+Afficher pour les clients brésiliens le montant total de commandes ainsi que le pourcentage sur les ventes totales. (Afficher aussi les ventes totales) (1 ligne)
+;
+
+Le nombre des commandes et la somme des frais de port pour chaque client et par année et par mois.  Il faut afficher uniquement les clients  qui ont commandé plus de 3 fois dans le mois et dont leur frais de port dans le mois est supérieur à 1000€.(33 lignes)
+
+Tous les clients et les cumuls des quantités vendues pour les clients qui ont passé des commandes. Afficher les enregistrements par ordre décroissant de cumul des commandes. (89 lignes)
+
+Les localités des clients et le cumul des quantités vendues par localité. Afficher les enregistrements par ordre décroissant de cumul des commandes. (69 lignes)
+
+
+Le nom, prénom, la fonction de tous les employés, la somme des frais de port et cumul des ventes pour les employés qui ont passé des commandes. (9 lignes)
+
+Les sociétés clientes qui ont commandé le produit ‘Chai’ mais également qui ont commandé plus de 25 produits. (14 lignes)
+
+
