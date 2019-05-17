@@ -50,3 +50,48 @@ select SOCIETE, ClientTotal, (
 # dont leur frais de port dans le mois est supérieur à 1000€.(33 lignes)
 
 
+# Tous les clients et les cumuls des quantités vendues pour les clients qui ont passé des commandes.
+# Afficher les enregistrements par ordre décroissant de cumul des commandes. (89 lignes)
+
+select SOCIETE, sum(QUANTITE) as Cumul
+from clients inner join commandes inner join details_commandes
+	on clients.CODE_CLIENT = commandes.CODE_CLIENT
+    and commandes.NO_COMMANDE = details_commandes.NO_COMMANDE
+group by clients.CODE_CLIENT
+order by Cumul DESC;
+
+# Les localités des clients et le cumul des quantités vendues par localité. Afficher les enregistrements
+# par ordre décroissant de cumul des commandes. (69 lignes)
+
+select VILLE, sum(QUANTITE) as "Cumul quantités"
+from clients inner join commandes inner join details_commandes
+	on clients.CODE_CLIENT = commandes.CODE_CLIENT
+    and commandes.NO_COMMANDE = details_commandes.NO_COMMANDE
+group by VILLE
+order by sum(QUANTITE) DESC;
+
+# Le nom, prénom, la fonction de tous les employés, la somme des frais de port et cumul des ventes
+# pour les employés qui ont passé des commandes. (9 lignes)
+
+select NOM, PRENOM, FONCTION, sum(PORT) as Port, sum(QUANTITE*PRIX_UNITAIRE) as CA
+from employes left outer join commandes
+	on employes.NO_EMPLOYE = commandes.NO_EMPLOYE
+ inner join details_commandes
+	on commandes.NO_COMMANDE = details_commandes.NO_COMMANDE
+group by employes.NO_EMPLOYE;
+
+# Les sociétés clientes qui ont commandé le produit ‘Chai’ mais également qui ont commandé
+# plus de 25 produits. (14 lignes)
+
+select SOCIETE
+from clients inner join commandes inner join details_commandes
+	on clients.CODE_CLIENT = commandes.CODE_CLIENT
+    and commandes.NO_COMMANDE = details_commandes.NO_COMMANDE
+where REF_PRODUIT = 1
+union
+select SOCIETE
+from clients inner join commandes inner join details_commandes
+	on clients.CODE_CLIENT = commandes.CODE_CLIENT
+    and commandes.NO_COMMANDE = details_commandes.NO_COMMANDE
+group by clients.CODE_CLIENT
+having sum(QUANTITE) > 25;
